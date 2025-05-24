@@ -39,4 +39,28 @@ The system:
 ---
 
 ## 🗂️ Directory Structure
+groupface-attendance-system/
+├── face_dataset_generation.py # Face detection & cropping using MTCNN
+├── augmentation_.py # Augment face dataset (Albumentations)
+├── Arc_face_Training.py # Extract embeddings & save labels
+├── recognise_faces.py # Run face recognition & generate reports
+├── main.py # Unified entry point for the entire system
+├── README.md # You're here!
+
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/groupface-attendance-system.git
+cd groupface-attendance-system
+pip install -r requirements.txt
+
+🚀 How to Run the Project
+Step 1: Generate Face Crops
+python face_dataset_generation.py
+
 

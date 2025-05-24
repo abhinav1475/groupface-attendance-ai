@@ -62,5 +62,78 @@ pip install -r requirements.txt
 🚀 How to Run the Project
 Step 1: Generate Face Crops
 python face_dataset_generation.py
+Detects and crops faces from raw .jpg files in /imgs and saves them to /faces.
+
+Step 2: Augment Faces
+python augmentation_.py
+Creates 10 augmented images per face using rotation, flip, scale, etc., and saves to /augmented_faces.
+
+Step 3: Extract Embeddings
+python Arc_face_Training.py
+Uses InsightFace to extract facial embeddings and saves them as .pkl files.
+
+Step 4: Recognize Faces in Group Photo
+python recognise_faces.py
+Input: Group photo (e.g., group_test_1.jpg)
+Output: Image with bounding boxes + attendance report (present/absent)
+
+
+---
+
+## 📈 Results Summary
+
+| Metric       | Score   |
+|--------------|---------|
+| **Accuracy** | 92%     |
+| **Precision**| 91%     |
+| **Recall**   | 93%     |
+| **F1 Score** | 0.92    |
+| **AUC (LFW)**| 0.9911  |
+| **EER**      | 0.042   |
+
+- The model showed strong performance in group image settings and maintained high generalization on the LFW benchmark dataset.
+- Face detection and embedding recognition handled occlusion and lighting variation well due to MTCNN and ArcFace robustness.
+
+---
+
+## 🧪 Dataset Notes
+
+- **Number of students**: 23
+- **Images per student**: ~150 (including augmentations)
+- **Image collection**: Captured using an iPhone 14 Pro Max in real classroom settings.
+- **Augmentation**: Horizontal flips, brightness shifts, rotations, blurs, and scale transforms.
+- **Group photos**: Used for validation — tested in multiple lighting and occlusion conditions.
+
+---
+
+## 📚 Citation & Credits
+
+This project is based on the research paper:
+
+> *Automated Attendance Monitoring Using Group Photo-Based Face Recognition: A Deep Learning Approach for Educational Institutions*  
+> **Authors**:  
+> Abhinav Garlapati, Pavan Kumar Challapalli, Shiva Shankar Reddy Tara  
+> Siddhartha Academy of Higher Education, Vijayawada, India
+
+For academic or research use, please cite this work accordingly.
+
+---
+
+## 🔮 Future Enhancements
+
+- **Liveliness Detection**: Add spoof prevention using liveliness verification.
+- **Mobile & Edge Deployment**: Optimize for real-time performance on Raspberry Pi or mobile apps.
+- **CMS Integration**: Expand backend attendance logging and reporting.
+- **Cybersecurity**: Encrypt face embeddings and attendance data for secure transmission and storage.
+- **Multiclass Scalability**: Train and test across departments and year-wise sections dynamically.
+- **Face ID Updates**: Enable retraining when students update their reference images.
+
+---
+
+## 🛡️ License
+
+MIT License – open for academic and educational use.
+
+
 
 
